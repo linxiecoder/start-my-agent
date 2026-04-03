@@ -2,9 +2,10 @@ import torch.cuda
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "common"))
+# 添加practice目录到路径，以便导入common模块
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from markdown_reader import MarkdownReader
+from common.util.markdown_reader import MarkdownReader
 
 reader = MarkdownReader()
 # 现在可以直接导入 MarkdownReader 类
