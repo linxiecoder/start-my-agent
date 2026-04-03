@@ -1,0 +1,80 @@
+{
+  "name": "基础保护规则集",
+  "target": "branch",
+  "enforcement": "active",
+  "bypass_actors": [],
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH",
+        "refs/heads/master"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "creation",
+      "parameters": {}
+    },
+    {
+      "type": "update",
+      "parameters": {}
+    },
+    {
+      "type": "deletion",
+      "parameters": {}
+    },
+    {
+      "type": "required_linear_history",
+      "parameters": {}
+    },
+    {
+      "type": "merge_queue",
+      "parameters": {}
+    },
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 1,
+        "dismiss_stale_reviews": true,
+        "require_code_owner_review": false,
+        "required_review_thread_resolution": true,
+        "require_last_push_approval": false,
+        "required_conversation_resolution": true,
+        "require_approving_reviews": true,
+        "authorized_actor_names": []
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": false,
+        "required_status_checks": []
+      }
+    },
+    {
+      "type": "non_fast_forward",
+      "parameters": {}
+    },
+    {
+      "type": "commit_message_pattern",
+      "parameters": {
+        "operator": "starts_with",
+        "pattern": "(feat|fix|chore|docs|style|refactor|perf|test)(\\(.+\\))?:",
+        "negate": false,
+        "name": "语义化提交"
+      }
+    },
+    {
+      "type": "commit_signature_verification",
+      "parameters": {
+        "public_key_signature_required": false
+      }
+    },
+    {
+      "type": "workflows",
+      "parameters": {}
+    }
+  ]
+}
