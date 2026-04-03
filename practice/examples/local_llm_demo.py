@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+
+
 本地LLM使用示例
 
 本示例演示如何使用第三章的本地LLM功能。
@@ -7,7 +9,7 @@
 
 使用方法：
 1. 安装依赖: pip install torch modelscope
-2. 运行: python local_llm_demo.py
+2. 运行: python practice/examples/local_llm_demo.py
 
 注意：首次运行会下载模型，可能需要较长时间和磁盘空间。
 """

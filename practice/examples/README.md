@@ -1,6 +1,8 @@
+
+
 # 项目示例代码
 
-本目录包含Hello Agents项目的使用示例，帮助您快速上手和理解项目功能。
+本目录包含Start My Agent项目的使用示例，帮助您快速上手和理解项目功能。
 
 ## 📁 示例文件
 
@@ -16,7 +18,7 @@
 
 ```bash
 # 进入项目根目录
-cd /path/to/hello-agents
+cd /path/to/start-my-agent
 
 # 安装基础依赖
 pip install openai requests tavily-python
@@ -51,8 +53,8 @@ TAVILY_API_KEY=your-tavily-api-key
 
 **运行**：
 ```bash
-cd /path/to/hello-agents
-python examples/basic_agent_usage.py
+cd /path/to/start-my-agent
+python practice/examples/basic_agent_usage.py
 ```
 
 **输出示例**：
@@ -79,7 +81,7 @@ Action: get_weather(city="北京")
 **运行**：
 ```bash
 # 首次运行会下载模型（约1-2GB）
-python examples/local_llm_demo.py
+python practice/examples/local_llm_demo.py
 ```
 
 **注意**：
@@ -108,7 +110,7 @@ python examples/local_llm_demo.py
 
 **运行**：
 ```bash
-python examples/transformer_bpe_demo.py
+python practice/examples/transformer_bpe_demo.py
 ```
 
 **输出示例**：

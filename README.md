@@ -1,4 +1,4 @@
-# Hello Agents - AI代理与大型语言模型学习项目
+# Start My Agent - AI代理与大型语言模型学习项目
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="Python">
@@ -8,7 +8,7 @@
 
 ## 📖 项目简介
 
-Hello Agents 是一个专注于AI代理（AI Agents）和大型语言模型（LLM）的Python学习项目。本项目通过实践代码示例，帮助开发者理解和掌握以下核心概念：
+Start My Agent 是一个专注于AI代理（AI Agents）和大型语言模型（LLM）的Python学习项目。本项目通过实践代码示例，帮助开发者理解和掌握以下核心概念：
 
 - **AI代理架构**：如何构建能够感知、规划、执行和学习的智能代理
 - **大模型集成**：如何与OpenAI兼容API及本地LLM进行交互
@@ -28,25 +28,41 @@ Hello Agents 是一个专注于AI代理（AI Agents）和大型语言模型（LL
 ## 📁 项目结构
 
 ```
-hello-agents/
-├── chapters/                    # 学习章节
-│   ├── chapter1/               # 第一章：基础AI代理
-│   │   ├── system_prompt.py    # 旅行助手代理实现
+start-my-agent/
+├── learning/                   # 学习笔记与文档
+│   ├── chapter1/               # 第一章学习文档
+│   │   └── chapter1_guide.md   # 基础AI代理指南
+│   ├── chapter3/               # 第三章学习文档
+│   │   └── chapter3_guide.md   # LLM与Transformer指南
+│   └── notes/                  # 个人学习笔记（可自行添加）
+├── practice/                   # 练习代码
+│   ├── chapters/               # 章节代码
+│   │   ├── chapter1/           # 第一章：基础AI代理
+│   │   │   ├── system_prompt.py    # 旅行助手代理实现
+│   │   │   └── __init__.py
+│   │   ├── chapter3/           # 第三章：LLM与Transformer
+│   │   │   ├── use_llm.py          # 本地LLM调用示例
+│   │   │   ├── exercise_for_llm.py # LLM进阶练习
+│   │   │   ├── transformer.py      # Transformer模型实现
+│   │   │   ├── byte_pair_encoding.py # BPE算法实现
+│   │   │   ├── prompt/             # 提示词模板
+│   │   │   └── __init__.py
 │   │   └── __init__.py
-│   ├── chapter3/               # 第三章：LLM与Transformer
-│   │   ├── use_llm.py          # 本地LLM调用示例
-│   │   ├── exercise_for_llm.py # LLM进阶练习
-│   │   ├── transformer.py      # Transformer模型实现
-│   │   ├── byte_pair_encoding.py # BPE算法实现
-│   │   ├── prompt/             # 提示词模板
+│   ├── common/                 # 公共模块
+│   │   ├── util/               # 工具类
+│   │   │   ├── markdown_reader.py  # Markdown文件读取器
+│   │   │   └── __init__.py
+│   │   ├── config/             # 配置文件目录
 │   │   └── __init__.py
-├── common/                     # 公共模块
-│   ├── util/                   # 工具类
-│   │   └── markdown_reader.py  # Markdown文件读取器
-│   └── config/                 # 配置文件目录
-├── docs/                       # 文档目录
-│   ├── chapter1/               # 第一章文档
-│   └── chapter3/               # 第三章文档
+│   └── examples/               # 使用示例
+│       ├── basic_agent_usage.py    # 基础代理示例
+│       ├── local_llm_demo.py       # 本地LLM示例
+│       ├── transformer_bpe_demo.py # Transformer与BPE示例
+│       └── README.md               # 示例说明
+├── project/                    # 课程设计项目（完整应用）
+│   └── README.md               # 项目说明（待完善）
+├── requirements.txt            # Python依赖包列表
+├── .env.example                # 环境变量示例（建议复制为.env）
 └── README.md                   # 项目说明文档
 ```
 
@@ -62,19 +78,41 @@ hello-agents/
 
 1. **克隆项目**
    ```bash
-   git clone https://github.com/your-username/hello-agents.git
-   cd hello-agents
+    git clone https://github.com/linxiecoder/start-my-agent.git
+    cd start-my-agent
    ```
 
 2. **安装依赖**
+
+   推荐使用虚拟环境（可选但建议）：
+   ```bash
+   # 创建虚拟环境
+   python -m venv venv
+   
+   # 激活虚拟环境
+   # Windows:
+   venv\Scripts\activate
+   # Linux/Mac:
+   source venv/bin/activate
+   ```
+
+   安装项目依赖：
    ```bash
    pip install -r requirements.txt
    ```
 
    如果不存在`requirements.txt`，请手动安装以下包：
    ```bash
-   pip install openai requests tavily-python torch modelscope
+   pip install openai>=1.0.0 requests>=2.28.0 tavily-python>=0.1.0 torch>=2.0.0 modelscope>=1.9.0
    ```
+
+   **GPU支持**：如需GPU加速本地模型推理，请安装CUDA版本的PyTorch：
+   ```bash
+   # 根据CUDA版本选择，示例为CUDA 11.8
+   pip install torch>=2.0.0 --index-url https://download.pytorch.org/whl/cu118
+   ```
+
+   **可选依赖**：项目中的开发依赖（如pytest）可根据需要安装。
 
 3. **配置环境变量**
    创建`.env`文件并添加以下配置：
@@ -95,7 +133,7 @@ hello-agents/
 运行旅行助手代理示例：
 
 ```bash
-cd chapters/chapter1
+cd practice/chapters/chapter1
 python system_prompt.py
 ```
 
@@ -110,17 +148,19 @@ python system_prompt.py
 
 #### 使用本地LLM
 ```bash
-cd chapters/chapter3
+cd practice/chapters/chapter3
 python use_llm.py
 ```
 
 #### 运行Transformer实现
 ```bash
+cd practice/chapters/chapter3
 python transformer.py
 ```
 
 #### 体验BPE算法
 ```bash
+cd practice/chapters/chapter3
 python byte_pair_encoding.py
 ```
 
@@ -138,7 +178,7 @@ python byte_pair_encoding.py
 
 3. **本地模型配置**：
    - 项目默认使用Qwen3-0.6B模型
-   - 可修改`chapters/chapter3/use_llm.py`中的`model_id`变量
+    - 可修改`practice/chapters/chapter3/use_llm.py`中的`model_id`变量
    - 支持ModelScope上的所有开源模型
 
 ### 模型选择
@@ -158,7 +198,7 @@ python byte_pair_encoding.py
 
 ### 基础代理调用
 ```python
-from chapters.chapter1.system_prompt import AGENT_SYSTEM_PROMPT, OpenAICompatibleClient
+from practice.chapters.chapter1.system_prompt import AGENT_SYSTEM_PROMPT, OpenAICompatibleClient
 
 # 初始化客户端
 llm = OpenAICompatibleClient(
@@ -198,7 +238,7 @@ def get_weather(city: str) -> str:
     查询指定城市的实时天气
     使用wttr.in免费API
     """
-    # 实现代码见 chapters/chapter1/system_prompt.py
+    # 实现代码见 practice/chapters/chapter1/system_prompt.py
     pass
 ```
 
@@ -209,7 +249,7 @@ def get_attractions(city: str, weather: str) -> str:
     根据城市和天气搜索推荐景点
     使用Tavily搜索API
     """
-    # 实现代码见 chapters/chapter1/system_prompt.py
+    # 实现代码见 practice/chapters/chapter1/system_prompt.py
     pass
 ```
 
@@ -246,12 +286,30 @@ def get_attractions(city: str, weather: str) -> str:
 - 为新功能添加测试用例
 - 更新相关文档和示例
 
-## 📄 许可证
+## 📄 许可证与版权声明
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+### 项目来源
+本项目基于以下资源进行学习、扩展和修改：
+
+1. **主要参考项目**: [DataWhale China 的 hello-agents 项目](https://github.com/datawhalechina/hello-agents)
+2. **课程资料**: 参考了相关的公开AI课程资料和学习资源
+3. **代码实现**: 在理解原理的基础上进行了代码重构、优化和扩展
+
+### 版权声明
+- 原始代码和概念版权归 DataWhale China 及相关课程提供方所有
+- 本项目的重构、扩展和修改内容版权归 [linxiecoder](https://github.com/linxiecoder) 所有
+
+### 开源协议
+本项目采用 **MIT 许可证** - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+### 使用说明
+1. 本项目主要用于学习目的，展示了AI代理和LLM的核心概念
+2. 请遵守原项目的许可证要求
+3. 欢迎基于本项目进行进一步的学习和研究
 
 ## 🙏 致谢
 
+- 感谢 [DataWhale China](https://github.com/datawhalechina) 提供的原始 [hello-agents 项目](https://github.com/datawhalechina/hello-agents)
 - 感谢所有开源AI模型和框架的贡献者
 - 感谢[Tavily](https://tavily.com/)提供免费的搜索API
 - 感谢[ModelScope](https://modelscope.cn/)提供丰富的模型资源
@@ -261,8 +319,8 @@ def get_attractions(city: str, weather: str) -> str:
 
 如有问题或建议，请通过以下方式联系：
 
-- 提交 [GitHub Issue](https://github.com/your-username/hello-agents/issues)
-- 发送邮件至：your-email@example.com
+- 提交 [GitHub Issue](https://github.com/linxiecoder/start-my-agent/issues)
+- 发送邮件至：linxiecoder@yeah.net
 
 ---
 

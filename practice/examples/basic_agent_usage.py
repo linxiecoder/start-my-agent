@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+
+
 基础AI代理使用示例
 
 本示例演示如何使用第一章实现的旅行助手代理。
@@ -7,7 +9,7 @@
 
 使用方法：
 1. 配置环境变量（API_KEY, BASE_URL, MODEL_ID, TAVILY_API_KEY）
-2. 运行: python basic_agent_usage.py
+2. 运行: python practice/examples/basic_agent_usage.py
 """
 
 import os

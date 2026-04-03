@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+
+
 Transformer与BPE算法演示
 
 本示例演示第三章的Transformer模型实现和BPE词元化算法。
@@ -7,7 +9,7 @@ Transformer与BPE算法演示
 
 使用方法：
 1. 安装依赖: pip install torch
-2. 运行: python transformer_bpe_demo.py
+2. 运行: python practice/examples/transformer_bpe_demo.py
 """
 
 import sys
