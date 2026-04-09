@@ -1,0 +1,2 @@
+[console_scripts]
+start-my-agent = startmyagent.examples.basic_agent_usage:main
