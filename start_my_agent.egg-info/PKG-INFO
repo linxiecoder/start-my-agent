@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: start-my-agent
+Version: 0.1.0
+Summary: AI/LLM智能体学习项目 - Start My Agent课程
+Author-email: Start My Agent Course <example@example.com>
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: openai>=1.0.0
+Requires-Dist: tavily-python>=0.3.0
+Requires-Dist: torch>=2.0.0
+Requires-Dist: modelscope>=1.0.0
+Requires-Dist: requests>=2.28.0
+Requires-Dist: sympy>=1.12
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: addict>=2.4.0
+Requires-Dist: transformers>=4.30.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"

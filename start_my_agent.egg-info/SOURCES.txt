@@ -1,0 +1,8 @@
+pyproject.toml
+start_my_agent.egg-info/PKG-INFO
+start_my_agent.egg-info/SOURCES.txt
+start_my_agent.egg-info/dependency_links.txt
+start_my_agent.egg-info/entry_points.txt
+start_my_agent.egg-info/requires.txt
+start_my_agent.egg-info/top_level.txt
+tests/test_basic.py
